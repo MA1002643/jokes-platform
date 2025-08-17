@@ -26,8 +26,6 @@ A tiny full-stack app that imports jokes from the official_joke_api JSON, stores
 - **Docker Desktop** (for PostgreSQL)
 - **Git**
 
-> If you cannot use Docker, there’s a SQLite fallback guide at the end.
-
 ---
 
 ## 1) Clone the repo
