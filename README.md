@@ -10,12 +10,12 @@ A tiny full-stack app that imports jokes from the official_joke_api JSON, stores
 
 ---
 
-## Demo behavior
+## Demo behaviour
 
 - `GET /api/jokes/random` → returns one random joke: `{ id, type, setup, punchline }`
 - UI at `http://localhost:3000/`:
-  - First click shows punchline
-  - Second click fetches the next random joke
+- First click shows punchline
+- Second click fetches the next random joke
 
 ---
 
@@ -28,91 +28,114 @@ A tiny full-stack app that imports jokes from the official_joke_api JSON, stores
 
 ---
 
-## 1) Clone the repo
+### 1) Clone the repo
 
 ````bash
 git clone https://github.com/MA1002643/jokes-app.git
 cd jokes-app
+````
+---
 
-## 2) Environment variables
+### 2) Environment variables
 
 First, create a `.env` file based on the provided example:
 
-```bash
+````bash
 cp .env.example .env
-
-# Database connection string
+````
+#### Database connection string
+````
 DATABASE_URL="postgresql://postgres:postgres@localhost:5432/jokesdb?schema=public"
+````
 
-# Port the Express server will run on
+#### Port the Express server will run on
+````
 PORT=3000
+````
 
-## 3) Start PostgreSQL (Docker)
+---
+
+### 3) Start PostgreSQL (Docker)
 
 From the project root, run:
 
-```bash
+````bash
 docker-compose up -d
+````
+Verify the database is running.
 
-Verify the database is running
+````bash
+docker ps
+````
+---
 
-run: "docker ps" in the terminal.
-
-## 4) Install dependencies
+### 4) Install dependencies
 
 Once the database is running, install the Node.js dependencies:
 
-```bash
+````bash
 npm install
+````
+---
 
-## 5) Prisma: generate client & run migrations
+### 5) Prisma: generate client & run migrations
 
 After installing dependencies, you need to generate the Prisma client and run the database migrations to create the tables.
 
 Run the following commands:
 
-```bash
+````bash
 # Generate the Prisma client
 npx prisma generate
 
 # Run migrations and apply them to the database
 npx prisma migrate dev --name init
+````
+---
 
-## 6) Seed the database
+### 6) Seed the database
 
 Run:
 
-```bash
+````bash
 npx prisma db seed
+````
+---
 
-## 7) Run the app (development)
+### 7) Run the app (development)
 
 Start the server in development mode:
 
-```bash
+````bash
 npm run dev
+````
+---
 
-## Project Folder
-
-prisma/
-  schema.prisma        # Prisma data model (PostgreSQL provider)
-  jokes.json           # Source data for seeding (copied from brief)
-  seed.mjs             # ESM seed script (no ts-node needed)
-src/
-  app.ts               # Express app (routes, middleware, static hosting)
-  index.ts             # Server entrypoint (reads PORT, starts app)
-  db.ts                # Prisma client init
-  routes/jokes.ts      # /api/jokes/random route
-  controllers/jokesController.ts
-  services/jokesService.ts
-public/
-  index.html           # UI (Tailwind via CDN + jQuery)
-  main.js              # Click-to-reveal logic, fetches random jokes
-.env.example
-docker-compose.yml     # Postgres service
-Dockerfile             # Containerize the app (optional)
-tsconfig.json          # TypeScript config (ESM-friendly, NodeNext)
-jest.config.js         # (tests optional)
-.eslintrc.json         # Linting config
-.prettierrc            # Formatting config
+### Project Folder
+````
+project-root/
+├── prisma/
+│   └── schema.prisma          # Prisma data model (PostgreSQL provider)
+├── jokes.json                 # Source data for seeding (copied from brief)
+├── seed.mjs                   # ESM seed script (no ts-node needed)
+├── src/
+│   ├── app.ts                 # Express app (routes, middleware, static hosting)
+│   ├── index.ts               # Server entrypoint (reads PORT, starts app)
+│   ├── db.ts                  # Prisma client init
+│   ├── routes/
+│   │   └── jokes.ts           # /api/jokes/random route
+│   ├── controllers/
+│   │   └── jokesController.ts # Controller logic
+│   └── services/
+│       └── jokesService.ts    # Service layer
+├── public/
+│   ├── index.html             # UI (Tailwind via CDN + jQuery)
+│   └── main.js                # Click-to-reveal logic, fetches random jokes
+├── .env.example               # Environment variables template
+├── docker-compose.yml         # Postgres service
+├── Dockerfile                 # Containerize the app (optional)
+├── tsconfig.json              # TypeScript config (ESM-friendly, NodeNext)
+├── jest.config.js             # Testing config (tests optional)
+├── .eslintrc.json             # Linting config
+└── .prettierrc                # Formatting config
 ````
