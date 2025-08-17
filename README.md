@@ -41,8 +41,6 @@ First, create a `.env` file based on the provided example:
 ```bash
 cp .env.example .env
 
-Then open .env and add the following:
-
 # Database connection string
 DATABASE_URL="postgresql://postgres:postgres@localhost:5432/jokesdb?schema=public"
 
