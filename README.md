@@ -29,6 +29,35 @@
 <br>
 <!-- TECH-STACK:START -->
 
+<div align="center" style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center;margin:0 auto;">
+<img src="https://img.shields.io/badge/%40prisma%2Fclient-444444.svg?style=flat&logo=%40prisma%2Fclient&logoColor=white" alt="@prisma/client">
+<img src="https://img.shields.io/badge/CORS-444444.svg?style=flat&logo=cors&logoColor=white" alt="CORS">
+<img src="https://img.shields.io/badge/Express-000000.svg?style=flat&logo=express&logoColor=white" alt="Express">
+<img src="https://img.shields.io/badge/morgan-444444.svg?style=flat&logo=morgan&logoColor=white" alt="morgan">
+<img src="https://img.shields.io/badge/%40types%2Fexpress-444444.svg?style=flat&logo=%40types%2Fexpress&logoColor=white" alt="@types/express">
+<img src="https://img.shields.io/badge/%40types%2Fjest-444444.svg?style=flat&logo=%40types%2Fjest&logoColor=white" alt="@types/jest">
+<img src="https://img.shields.io/badge/%40types%2Fnode-444444.svg?style=flat&logo=%40types%2Fnode&logoColor=white" alt="@types/node">
+<img src="https://img.shields.io/badge/%40types%2Fsupertest-444444.svg?style=flat&logo=%40types%2Fsupertest&logoColor=white" alt="@types/supertest">
+<img src="https://img.shields.io/badge/autoprefixer-DD3735.svg?style=flat&logo=autoprefixer&logoColor=white" alt="autoprefixer">
+<img src="https://img.shields.io/badge/eslint-config-prettier-444444.svg?style=flat&logo=eslint-config-prettier&logoColor=white" alt="eslint-config-prettier">
+<img src="https://img.shields.io/badge/eslint-plugin-import-444444.svg?style=flat&logo=eslint-plugin-import&logoColor=white" alt="eslint-plugin-import">
+<img src="https://img.shields.io/badge/jest-C21325.svg?style=flat&logo=jest&logoColor=white" alt="jest">
+<img src="https://img.shields.io/badge/postcss-DD3A0A.svg?style=flat&logo=postcss&logoColor=white" alt="postcss">
+<img src="https://img.shields.io/badge/prisma-2D3748.svg?style=flat&logo=prisma&logoColor=white" alt="prisma">
+<img src="https://img.shields.io/badge/supertest-444444.svg?style=flat&logo=supertest&logoColor=white" alt="supertest">
+<img src="https://img.shields.io/badge/tailwindcss-06B6D4.svg?style=flat&logo=tailwindcss&logoColor=white" alt="tailwindcss">
+<img src="https://img.shields.io/badge/ts-jest-444444.svg?style=flat&logo=ts-jest&logoColor=white" alt="ts-jest">
+<img src="https://img.shields.io/badge/ts-node-3178C6.svg?style=flat&logo=tsnode&logoColor=white" alt="ts-node">
+<img src="https://img.shields.io/badge/tsx-444444.svg?style=flat&logo=tsx&logoColor=white" alt="tsx">
+<img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat&logo=typescript&logoColor=white" alt="TypeScript">
+<img src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=flat&logo=eslint&logoColor=white" alt="ESLint">
+<img src="https://img.shields.io/badge/Prettier-F7B93E.svg?style=flat&logo=prettier&logoColor=white" alt="Prettier">
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&logo=javascript&logoColor=white" alt="JavaScript">
+<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=flat&logo=html5&logoColor=white" alt="HTML5">
+<img src="https://img.shields.io/badge/CSS3-1572B6.svg?style=flat&logo=css3&logoColor=white" alt="CSS3">
+<img src="https://img.shields.io/badge/SQL-444444.svg?style=flat&logo=sql&logoColor=white" alt="SQL">
+</div>
+
 <!-- TECH-STACK:END -->
 </div>
 <br>
