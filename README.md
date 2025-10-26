@@ -145,167 +145,129 @@ This project was developed to demonstrate how a simple concept — joke sharing 
 ### 📑 Project Index
 
 <details open>
-	<summary><b><code>JOKES-PLATFORM/</code></b></summary>
-	<!-- __root__ Submodule -->
-	<details>
-		<summary><b>__root__</b></summary>
-		<blockquote>
-			<div class='directory-path' style='padding: 8px 0; color: #666;'>
-				<code><b>⦿ __root__</b></code>
-			<table style='width: 100%; border-collapse: collapse;'>
-			<thead>
-				<tr style='background-color: #f8f9fa;'>
-					<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-					<th style='text-align: left; padding: 8px;'>Summary</th>
-				</tr>
-			</thead>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/Dockerfile'>Dockerfile</a></b></td>
-					<td style='padding: 8px;'>- Defines the containerized environment for deploying the application by orchestrating dependency installation, build processes, and production setup<br>- It ensures a streamlined, consistent deployment process, optimizing the application for production use with minimal overhead<br>- The Dockerfile encapsulates the entire build lifecycle, enabling reliable, scalable deployment within containerized infrastructure.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/ tsconfig.json'> tsconfig.json</a></b></td>
-					<td style='padding: 8px;'>- Defines the TypeScript compilation settings to ensure consistent, modern JavaScript output aligned with project standards<br>- It facilitates seamless development and deployment by specifying target environments, module resolution, and strict type checking, thereby supporting the overall architectures robustness and maintainability.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/jest.config.js'>jest.config.js</a></b></td>
-					<td style='padding: 8px;'>- Configures the testing environment for the project by integrating TypeScript support with Jest<br>- It ensures that tests run in a Node.js environment, utilizing the default TypeScript preset for accurate transformation of TypeScript files<br>- This setup facilitates reliable, type-aware testing aligned with the projects architecture, supporting maintainability and consistency across the codebase.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/docker-compose.yml'>docker-compose.yml</a></b></td>
-					<td style='padding: 8px;'>- Defines the containerized environment for the application and its PostgreSQL database, orchestrating service dependencies, data persistence, and configuration<br>- Facilitates seamless deployment by ensuring the database is initialized and migrations are applied before launching the main application, thereby supporting reliable development and production workflows within the overall architecture.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/README.md'>README.md</a></b></td>
-					<td style='padding: 8px;'>- Facilitates the core functionality of the Jokes App by managing joke retrieval, storage, and API endpoints<br>- Integrates the database with server logic to serve random jokes, enabling seamless interaction between the backend data layer and frontend UI<br>- Ensures efficient data flow and supports the app’s interactive, click-to-reveal joke experience within the overall architecture.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/tailwind.config.js'>tailwind.config.js</a></b></td>
-					<td style='padding: 8px;'>- Defines the Tailwind CSS configuration to specify which files are scanned for class names, enabling optimized styling and purging unused styles<br>- It ensures that the styling framework integrates seamlessly with the projects HTML and JavaScript files, supporting a streamlined and efficient design system within the overall architecture.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/package.json'>package.json</a></b></td>
-					<td style='padding: 8px;'>- Defines the core server setup for the jokes application, enabling API endpoints to serve and manage joke data<br>- Integrates Express for routing, Prisma for database interactions, and middleware for logging and CORS, forming the backbone that supports data retrieval, creation, and overall application functionality within the architecture.</td>
-				</tr>
-			</table>
-		</blockquote>
-	</details>
-	<!-- src Submodule -->
-	<details>
-		<summary><b>src</b></summary>
-		<blockquote>
-			<div class='directory-path' style='padding: 8px 0; color: #666;'>
-				<code><b>⦿ src</b></code>
-			<table style='width: 100%; border-collapse: collapse;'>
-			<thead>
-				<tr style='background-color: #f8f9fa;'>
-					<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-					<th style='text-align: left; padding: 8px;'>Summary</th>
-				</tr>
-			</thead>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/src/db.ts'>db.ts</a></b></td>
-					<td style='padding: 8px;'>- Establishes a centralized Prisma client instance to facilitate database interactions across the application<br>- It enables seamless, type-safe communication with the database, supporting data querying, manipulation, and management within the broader architecture<br>- This setup ensures consistent database access and simplifies connection handling throughout the codebase.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/src/app.ts'>app.ts</a></b></td>
-					<td style='padding: 8px;'>- Defines the core Express application setup, integrating middleware for logging, CORS, and JSON parsing<br>- Serves static frontend assets and establishes API routing for jokes-related endpoints<br>- Includes a health check endpoint to monitor server status, forming the central entry point that orchestrates request handling and connects the backend API with the frontend interface within the overall architecture.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/src/index.ts'>index.ts</a></b></td>
-					<td style='padding: 8px;'>- Initialize and launch the server by configuring environment variables and setting up the application to listen on a specified port<br>- It serves as the entry point, orchestrating the startup process and ensuring the application is accessible, thereby integrating configuration management with the core server initialization within the overall project architecture.</td>
-				</tr>
-			</table>
-			<!-- controllers Submodule -->
-			<details>
-				<summary><b>controllers</b></summary>
-				<blockquote>
-					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ src.controllers</b></code>
-					<table style='width: 100%; border-collapse: collapse;'>
-					<thead>
-						<tr style='background-color: #f8f9fa;'>
-							<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-							<th style='text-align: left; padding: 8px;'>Summary</th>
-						</tr>
-					</thead>
-						<tr style='border-bottom: 1px solid #eee;'>
-							<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/src/controllers/jokesController.ts'>jokesController.ts</a></b></td>
-							<td style='padding: 8px;'>- Facilitates retrieval of a random joke by handling incoming requests and coordinating with the joke service<br>- Integrates seamlessly into the applications architecture by serving as the controller responsible for delivering joke data to clients, ensuring proper response formatting and error handling within the API layer.</td>
-						</tr>
-					</table>
-				</blockquote>
-			</details>
-			<!-- routes Submodule -->
-			<details>
-				<summary><b>routes</b></summary>
-				<blockquote>
-					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ src.routes</b></code>
-					<table style='width: 100%; border-collapse: collapse;'>
-					<thead>
-						<tr style='background-color: #f8f9fa;'>
-							<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-							<th style='text-align: left; padding: 8px;'>Summary</th>
-						</tr>
-					</thead>
-						<tr style='border-bottom: 1px solid #eee;'>
-							<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/src/routes/jokes.ts'>jokes.ts</a></b></td>
-							<td style='padding: 8px;'>- Defines the routing logic for joke-related endpoints within the application, specifically handling requests for random jokes<br>- Integrates with the central Express server architecture to facilitate user interactions with the jokes feature, enabling seamless retrieval of humorous content<br>- Serves as a key component in the API layer, connecting client requests to the joke generation functionality.</td>
-						</tr>
-					</table>
-				</blockquote>
-			</details>
-			<!-- services Submodule -->
-			<details>
-				<summary><b>services</b></summary>
-				<blockquote>
-					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ src.services</b></code>
-					<table style='width: 100%; border-collapse: collapse;'>
-					<thead>
-						<tr style='background-color: #f8f9fa;'>
-							<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-							<th style='text-align: left; padding: 8px;'>Summary</th>
-						</tr>
-					</thead>
-						<tr style='border-bottom: 1px solid #eee;'>
-							<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/src/services/jokesService.ts'>jokesService.ts</a></b></td>
-							<td style='padding: 8px;'>- Provides functionality to retrieve a random joke from the database, supporting the applications core entertainment feature<br>- It integrates with the database layer to fetch a single, randomly selected joke, enabling dynamic content delivery within the overall architecture<br>- This service underpins user engagement by supplying diverse, unpredictable humor content.</td>
-						</tr>
-					</table>
-				</blockquote>
-			</details>
-		</blockquote>
-	</details>
-	<!-- prisma Submodule -->
-	<details>
-		<summary><b>prisma</b></summary>
-		<blockquote>
-			<div class='directory-path' style='padding: 8px 0; color: #666;'>
-				<code><b>⦿ prisma</b></code>
-			<table style='width: 100%; border-collapse: collapse;'>
-			<thead>
-				<tr style='background-color: #f8f9fa;'>
-					<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-					<th style='text-align: left; padding: 8px;'>Summary</th>
-				</tr>
-			</thead>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/prisma/jokes.json'>jokes.json</a></b></td>
-					<td style='padding: 8px;'>- This code file, located at <code>prisma/jokes.json</code>, serves as a centralized repository of joke data within the project<br>- Its primary purpose is to provide a structured collection of humorous content that can be utilized across the application to enhance user engagement, entertainment, or onboarding experiences<br>- By maintaining jokes in a dedicated JSON file, the project ensures easy management, scalability, and integration of diverse joke types, supporting the overall architectures goal of delivering dynamic and lively content to end-users.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/prisma/seed.mjs'>seed.mjs</a></b></td>
-					<td style='padding: 8px;'>- Seeds the database with a collection of jokes from a local JSON file, ensuring the joke data is populated and up-to-date within the applications data layer<br>- Facilitates initial setup and testing by providing a consistent dataset, supporting the overall architectures focus on data management and retrieval for the joke-related features.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/jokes-platform/blob/master/prisma/schema.prisma'>schema.prisma</a></b></td>
-					<td style='padding: 8px;'>- Defines the database schema for storing jokes, including fields for type, setup, and punchline, with indexing to optimize query performance<br>- Serves as the foundational data model within the overall architecture, enabling structured storage and retrieval of joke data for the application<br>- Facilitates seamless integration between the application logic and the PostgreSQL database.</td>
-				</tr>
-			</table>
-		</blockquote>
-	</details>
+   <summary><b>JOKES-PLATFORM/</b></summary>
+   <details>
+      <summary><b>__root__</b></summary>
+      <ul>
+         <li><b><a href="./ tsconfig.json"> tsconfig.json</a></b> — File.</li>
+         <li><b><a href="./.eslintrc.json">.eslintrc.json</a></b> — File.</li>
+         <li><b><a href="./.gitignore">.gitignore</a></b> — File.</li>
+         <li><b><a href="./.prettierrc">.prettierrc</a></b> — File.</li>
+         <li><b><a href="./CODE_OF_CONDUCT.md">CODE_OF_CONDUCT.md</a></b> — File.</li>
+         <li><b><a href="./CONTRIBUTING.md">CONTRIBUTING.md</a></b> — File.</li>
+         <li><b><a href="./docker-compose.yml">docker-compose.yml</a></b> — File.</li>
+         <li><b><a href="./Dockerfile">Dockerfile</a></b> — File.</li>
+         <li><b><a href="./jest.config.js">jest.config.js</a></b> — JavaScript file.</li>
+         <li><b><a href="./LICENSE">LICENSE</a></b> — File.</li>
+         <li><b><a href="./package-lock.json">package-lock.json</a></b> — Lockfile with exact dependency versions.</li>
+         <li><b><a href="./package.json">package.json</a></b> — Npm manifest (dependencies & scripts).</li>
+         <li><b><a href="./README.md">README.md</a></b> — Project documentation, overview and setup instructions.</li>
+         <li><b><a href="./SECURITY.md">SECURITY.md</a></b> — File.</li>
+         <li><b><a href="./tailwind.config.js">tailwind.config.js</a></b> — JavaScript file.</li>
+      </ul>
+   </details>
+   <details>
+      <summary><b>.github</b></summary>
+      <ul>
+         <li><b><a href=".github/CODEOWNERS">CODEOWNERS</a></b> — File.</li>
+      </ul>
+      <details>
+         <summary><b>ISSUE_TEMPLATE</b></summary>
+      <ul>
+         <li><b><a href=".github/ISSUE_TEMPLATE/bug_report.yml">bug_report.yml</a></b> — File.</li>
+         <li><b><a href=".github/ISSUE_TEMPLATE/config.yml">config.yml</a></b> — File.</li>
+         <li><b><a href=".github/ISSUE_TEMPLATE/feature_request.yml">feature_request.yml</a></b> — File.</li>
+      </ul>
+      </details>
+      <details>
+         <summary><b>PULL_REQUEST_TEMPLATE</b></summary>
+      <ul>
+         <li><b><a href=".github/PULL_REQUEST_TEMPLATE/pull_request_template.yml">pull_request_template.yml</a></b> — File.</li>
+      </ul>
+      </details>
+      <details>
+         <summary><b>scripts</b></summary>
+      <ul>
+         <li><b><a href=".github/scripts/update-contributors.js">update-contributors.js</a></b> — JavaScript file.</li>
+      </ul>
+      </details>
+      <details>
+         <summary><b>workflows</b></summary>
+      <ul>
+         <li><b><a href=".github/workflows/ci.yml">ci.yml</a></b> — File.</li>
+         <li><b><a href=".github/workflows/update-contributors.yml">update-contributors.yml</a></b> — File.</li>
+         <li><b><a href=".github/workflows/update-project-index.yml">update-project-index.yml</a></b> — File.</li>
+         <li><b><a href=".github/workflows/update-project-structure.yml">update-project-structure.yml</a></b> — File.</li>
+         <li><b><a href=".github/workflows/update-tech-badges-single-repo.yml">update-tech-badges-single-repo.yml</a></b> — File.</li>
+      </ul>
+      </details>
+   </details>
+
+   <details>
+      <summary><b>prisma</b></summary>
+      <ul>
+         <li><b><a href="prisma/jokes.json">jokes.json</a></b> — File.</li>
+         <li><b><a href="prisma/schema.prisma">schema.prisma</a></b> — File.</li>
+         <li><b><a href="prisma/seed.mjs">seed.mjs</a></b> — File.</li>
+      </ul>
+      <details>
+         <summary><b>migrations</b></summary>
+      <ul>
+         <li><b><a href="prisma/migrations/migration_lock.toml">migration_lock.toml</a></b> — File.</li>
+      </ul>
+      <details>
+         <summary><b>20250817194353_init</b></summary>
+      <ul>
+         <li><b><a href="prisma/migrations/20250817194353_init/migration.sql">migration.sql</a></b> — Database migration script.</li>
+      </ul>
+      </details>
+      </details>
+   </details>
+
+   <details>
+      <summary><b>public</b></summary>
+      <ul>
+         <li><b><a href="public/index.html">index.html</a></b> — HTML page.</li>
+         <li><b><a href="public/main.js">main.js</a></b> — JavaScript file.</li>
+         <li><b><a href="public/styles.css">styles.css</a></b> — Stylesheet.</li>
+      </ul>
+   </details>
+
+   <details>
+      <summary><b>src</b></summary>
+      <ul>
+         <li><b><a href="src/app.ts">app.ts</a></b> — File.</li>
+         <li><b><a href="src/db.ts">db.ts</a></b> — File.</li>
+         <li><b><a href="src/index.ts">index.ts</a></b> — File.</li>
+      </ul>
+      <details>
+         <summary><b>controllers</b></summary>
+      <ul>
+         <li><b><a href="src/controllers/jokesController.ts">jokesController.ts</a></b> — File.</li>
+      </ul>
+      </details>
+      <details>
+         <summary><b>routes</b></summary>
+      <ul>
+         <li><b><a href="src/routes/jokes.ts">jokes.ts</a></b> — File.</li>
+      </ul>
+      </details>
+      <details>
+         <summary><b>services</b></summary>
+      <ul>
+         <li><b><a href="src/services/jokesService.ts">jokesService.ts</a></b> — File.</li>
+      </ul>
+      </details>
+      <details>
+         <summary><b>tests</b></summary>
+      <ul>
+         <li><b><a href="src/tests/jokes.route.test.ts">jokes.route.test.ts</a></b> — File.</li>
+         <li><b><a href="src/tests/jokes.service.test.ts">jokes.service.test.ts</a></b> — File.</li>
+      </ul>
+      </details>
+   </details>
+
+
 </details>
 
 ---
