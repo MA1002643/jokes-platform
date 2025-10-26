@@ -103,27 +103,39 @@ This project was developed to demonstrate how a simple concept — joke sharing 
 
 ```sh
 └── jokes-platform/
-    ├──  tsconfig.json
-    ├── Dockerfile
-    ├── README.md
-    ├── docker-compose.yml
-    ├── jest.config.js
-    ├── package-lock.json
-    ├── package.json
-    ├── prisma
-    │   ├── jokes.json
-    │   ├── migrations
-    │   ├── schema.prisma
-    │   └── seed.mjs
-    ├── src
-    │   ├── app.ts
-    │   ├── controllers
-    │   ├── db.ts
-    │   ├── index.ts
-    │   ├── routes
-    │   ├── services
-    │   └── tests
-    └── tailwind.config.js
+├── prisma/
+│   ├── migrations/
+│   │   ├── 20250817194353_init/
+│   │   │   └── migration.sql
+│   │   └── migration_lock.toml
+│   ├── jokes.json
+│   ├── schema.prisma
+│   └── seed.mjs
+├── src/
+│   ├── controllers/
+│   │   └── jokesController.ts
+│   ├── routes/
+│   │   └── jokes.ts
+│   ├── services/
+│   │   └── jokesService.ts
+│   ├── app.ts
+│   ├── db.ts
+│   └── index.ts
+├──  tsconfig.json
+├── .eslintrc.json
+├── .gitignore
+├── .prettierrc
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── docker-compose.yml
+├── Dockerfile
+├── jest.config.js
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── README.md
+├── SECURITY.md
+└── tailwind.config.js
 ```
 
 ---
