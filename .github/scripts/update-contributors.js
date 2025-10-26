@@ -1,20 +1,19 @@
-// .github/scripts/update-contributors.js
-// Node 20+ (global fetch available). CommonJS to avoid ESM config requirements.
+// Node 20+ (global fetch available). ESM-compatible version for "type": "module"
 
-const fs = require("fs");
-const process = require("process");
+import fs from 'node:fs';
+import process from 'node:process';
 
-const README_PATH = process.env.README_PATH || "README.md";
+const README_PATH = process.env.README_PATH || 'README.md';
 const DETAILS_SUMMARY_TEXT =
-  process.env.DETAILS_SUMMARY_TEXT || "<summary>Contributor Graph</summary>";
-const START_MARKER = process.env.START_MARKER || "<!-- CONTRIBUTORS:START -->";
-const END_MARKER = process.env.END_MARKER || "<!-- CONTRIBUTORS:END -->";
-const AVATAR_SIZE = parseInt(process.env.AVATAR_SIZE || "48", 10);
-const MAX_CONTRIBUTORS = parseInt(process.env.MAX_CONTRIBUTORS || "200", 10);
+  process.env.DETAILS_SUMMARY_TEXT || '<summary>Contributor Graph</summary>';
+const START_MARKER = process.env.START_MARKER || '<!-- CONTRIBUTORS:START -->';
+const END_MARKER = process.env.END_MARKER || '<!-- CONTRIBUTORS:END -->';
+const AVATAR_SIZE = parseInt(process.env.AVATAR_SIZE || '48', 10);
+const MAX_CONTRIBUTORS = parseInt(process.env.MAX_CONTRIBUTORS || '200', 10);
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || process.env.github_token;
 const REPOSITORY = process.env.GITHUB_REPOSITORY; // "owner/repo"
-const [OWNER, REPO] = REPOSITORY ? REPOSITORY.split("/") : [null, null];
+const [OWNER, REPO] = REPOSITORY ? REPOSITORY.split('/') : [null, null];
 
 function fileExists(p) {
   try {
@@ -26,16 +25,15 @@ function fileExists(p) {
 }
 
 function readFile(p) {
-  return fs.readFileSync(p, "utf8");
+  return fs.readFileSync(p, 'utf8');
 }
 
 function writeFile(p, content) {
-  fs.writeFileSync(p, content, "utf8");
+  fs.writeFileSync(p, content, 'utf8');
 }
 
 function hasRequiredSection(readme) {
-  const hasMarkers =
-    readme.includes(START_MARKER) && readme.includes(END_MARKER);
+  const hasMarkers = readme.includes(START_MARKER) && readme.includes(END_MARKER);
   return hasMarkers;
 }
 
@@ -56,20 +54,18 @@ function replaceBetweenMarkers(readme, innerHtml) {
 function buildContributorsHtml(contributors) {
   const imgs = contributors
     .map((c) => {
-      const login = c.login ?? "user";
+      const login = c.login ?? 'user';
       const html_url = c.html_url ?? `https://github.com/${login}`;
       const avatar = c.avatar_url;
       const alt = login;
 
-      // Extract the avatar URL and encode it for weserv.nl
-      const encodedAvatarUrl = encodeURIComponent(
-        avatar.replace("https://", "")
-      );
+      // Build circular avatar via weserv.nl
+      const encodedAvatarUrl = encodeURIComponent(avatar.replace('https://', ''));
       const circularImageUrl = `https://images.weserv.nl/?url=${encodedAvatarUrl}&w=${AVATAR_SIZE}&h=${AVATAR_SIZE}&fit=cover&mask=circle&border=white&borderwidth=2`;
 
       return `<a href="${html_url}" title="${login}"><img src="${circularImageUrl}" alt="${alt}" width="${AVATAR_SIZE}" height="${AVATAR_SIZE}" style="border-radius: 50%;"/></a>`;
     })
-    .join("\n");
+    .join('\n');
 
   return `<p align="left">\n${imgs}\n</p>`;
 }
@@ -85,15 +81,15 @@ async function fetchAllContributors(owner, repo, limit) {
     const url = `https://api.github.com/repos/${owner}/${repo}/contributors?per_page=${perPage}&page=${page}`;
     const res = await fetch(url, {
       headers: {
-        "User-Agent": "update-contributors-script",
-        Accept: "application/vnd.github+json",
+        'User-Agent': 'update-contributors-script',
+        Accept: 'application/vnd.github+json',
         ...(GITHUB_TOKEN ? { Authorization: `Bearer ${GITHUB_TOKEN}` } : {}),
       },
     });
 
     if (!res.ok) {
       console.warn(
-        `[update-contributors] GitHub API ${res.status} ${res.statusText} (page ${page}).`
+        `[update-contributors] GitHub API ${res.status} ${res.statusText} (page ${page}).`,
       );
       break;
     }
@@ -102,7 +98,7 @@ async function fetchAllContributors(owner, repo, limit) {
     if (!Array.isArray(batch) || batch.length === 0) break;
 
     const filtered = batch.filter(
-      (c) => c && c.type !== "Bot" && c.login !== "github-actions[bot]"
+      (c) => c && c.type !== 'Bot' && c.login !== 'github-actions[bot]',
     );
 
     results.push(...filtered);
@@ -118,7 +114,7 @@ async function fetchAllContributors(owner, repo, limit) {
   try {
     if (!fileExists(README_PATH)) {
       console.warn(
-        `[update-contributors] README not found at "${README_PATH}". Skipping without error.`
+        `[update-contributors] README not found at "${README_PATH}". Skipping without error.`,
       );
       process.exit(0);
       return;
@@ -131,21 +127,17 @@ async function fetchAllContributors(owner, repo, limit) {
       console.log(
         `[update-contributors] Required section not found. Expecting:\n` +
           `  • ${START_MARKER} ... ${END_MARKER}\n` +
-          `No changes made. Exiting successfully.`
+          `No changes made. Exiting successfully.`,
       );
       process.exit(0);
       return;
     }
 
-    const contributors = await fetchAllContributors(
-      OWNER,
-      REPO,
-      MAX_CONTRIBUTORS
-    );
+    const contributors = await fetchAllContributors(OWNER, REPO, MAX_CONTRIBUTORS);
 
     if (!contributors.length) {
       console.log(
-        "[update-contributors] No contributors returned (or API issue). Leaving current block unchanged."
+        '[update-contributors] No contributors returned (or API issue). Leaving current block unchanged.',
       );
       process.exit(0);
       return;
@@ -156,19 +148,15 @@ async function fetchAllContributors(owner, repo, limit) {
 
     if (updated !== original) {
       writeFile(README_PATH, updated);
-      console.log(
-        `[update-contributors] Wrote ${contributors.length} contributor(s) into README.`
-      );
+      console.log(`[update-contributors] Wrote ${contributors.length} contributor(s) into README.`);
     } else {
-      console.log("[update-contributors] README already up to date.");
+      console.log('[update-contributors] README already up to date.');
     }
 
     process.exit(0);
   } catch (err) {
     // Keep CI green; log and exit 0.
-    console.warn(
-      `[update-contributors] Non-fatal error: ${err?.message || String(err)}`
-    );
+    console.warn(`[update-contributors] Non-fatal error: ${err?.message || String(err)}`);
     process.exit(0);
   }
 })();
